@@ -208,7 +208,23 @@ public class MainActivity extends AppCompatActivity  implements ContactFragment.
     }
 
     private boolean isValidMobile(String phone) {
-        return android.util.Patterns.PHONE.matcher(phone).matches();
+          boolean check=false;
+        if(!Pattern.matches("[a-zA-Z]+", phone))
+        {
+            if(phone.length()==9)
+            {
+                check = true;
+
+            }
+        }
+        else
+        {
+            check=false;
+        }
+        return check;
+
+
+        //return android.util.Patterns.PHONE.matcher(phone).matches();
     }
     public boolean isValidDate(String date)
     {
